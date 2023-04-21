@@ -24,7 +24,7 @@ public class LoaderAssets {
     }
 
     private void loadTexture(GraphicsFW graphicsFW){
-        UtilResources.textureAtlas = graphicsFW.newTexture("");
+        UtilResources.textureAtlas = graphicsFW.newTexture("img1.png");
 
     }
 }
