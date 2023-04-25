@@ -4,11 +4,16 @@ import android.graphics.Color;
 
 import com.example.gravity.R;
 import com.example.my_framework.CoreFW;
+import com.example.my_framework.LogIn;
 import com.example.my_framework.SceneFW;
 
 import generator.GeneratorBackground;
 
 public class GameScene extends SceneFW {
+
+    public GameScene(LogIn logIn) {
+        super(logIn);
+    }
 
     enum GameState{
         READY, RUNNING, PAUSE,GAMEOVER
@@ -31,6 +36,9 @@ public class GameScene extends SceneFW {
         if (gameState==GameState.RUNNING){
             updateStateRunning();
         }
+        if (gameState==GameState.RUNNING){
+            updateStateRunning();
+        }
         if (gameState==GameState.PAUSE){
             updateStatePause();
         }
@@ -47,6 +55,9 @@ public class GameScene extends SceneFW {
 
         if (gameState==GameState.READY){
             drawingStateReady();
+        }
+        if (gameState==GameState.RUNNING){
+            drawingStateRunning();
         }
         if (gameState==GameState.RUNNING){
             drawingStateRunning();

@@ -1,6 +1,7 @@
 package com.example.my_framework;
 
 public abstract class SceneFW {
+    public LogIn logIn;
     public CoreFW coreFW;
     public int sceneWidth;
     public int sceneHeight;
@@ -13,6 +14,14 @@ public abstract class SceneFW {
         graphicsFW=coreFW.getGraphicsFW();
 
     }
+
+    public SceneFW(LogIn logIn) {
+        this.logIn = logIn;
+        sceneWidth=coreFW.getGraphicsFW().getWidthFrameBuffer();
+        sceneHeight=coreFW.getGraphicsFW().getHeightFrameBuffer();
+        graphicsFW=coreFW.getGraphicsFW();
+    }
+
     public abstract void update();
     public abstract void drawing();
     public abstract void pause();
